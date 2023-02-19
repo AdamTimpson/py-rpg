@@ -1,2 +1,2 @@
 # py-rpg
-A pyjama RPG
+A pygame RPG
