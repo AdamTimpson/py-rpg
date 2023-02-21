@@ -8,12 +8,16 @@ class Game:
         pygame.init()
         self.screen = pygame.display.set_mode((WIN_WIDTH, WIN_HEIGHT)) # Set screen dimensions 
         self.clock = pygame.time.Clock()
-        # self.font = pygame.font.Font("Arial", 32)
         self.running = True
+
+        self.character_spritesheet = SpriteSheet("img/_character.png")
+        self.terrain_spritesheet = SpriteSheet("img/terrain.png")
 
     def create_tilemap(self):
         for i, row in enumerate(tilemap):
             for j, column in enumerate(row):
+                Ground(self, j, i)
+                
                 if column == "B":
                     Block(self, j, i)
                 if column == "P":
